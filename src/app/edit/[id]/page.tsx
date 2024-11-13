@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import "react-quill/dist/quill.snow.css";
 rules: {
 "no-unused-vars" : "off",
-"@typescript-eslint/no-unused-vars": ["error"],
+"@typescript-eslint/no-unused-vars": ["error"]
 }
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
