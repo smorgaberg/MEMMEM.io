@@ -16,7 +16,8 @@ export default function EditDocumentPage({
   params: { id: string };
 }) {
   const router = useRouter();
-  const searchParams = useSearchParams(); // Replaces query from useRouter
+  const searchParams = useSearchParams(); ////eslint-disable-line no-unused-vars
+
   const docId = params.id; // Retrieve the document ID from the query parameters
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
