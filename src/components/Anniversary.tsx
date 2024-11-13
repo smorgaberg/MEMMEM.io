@@ -1,26 +1,15 @@
 "use client";
 
+// Remove duplicate imports for useState, useEffect, getDocs, and collection
 import React, { useState, useEffect } from "react";
 import { db } from "@/lib/firebaseConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { format, differenceInDays } from "date-fns";
-import { ko } from "date-fns/locale"; // 한국어 로케일 임포트
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-} from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar"; // Shadcn Calendar component
-import { Calendar as CalendarIcon } from "lucide-react"; // Icon for Calendar button
-import { Toast } from "@/components/ui/toast"; // Shadcn toast component
+// Remove the second import line:
+// import { useState, useEffect } from 'react';
+// import { getDocs, collection } from 'firebase/firestore';
 
 
 
-import { useState, useEffect } from 'react';
-import { getDocs, collection } from 'firebase/firestore';
 
 type Memorial = {
   id: string;
