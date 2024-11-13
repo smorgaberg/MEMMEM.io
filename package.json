@@ -2,7 +2,11 @@
   "name": "cyber-columbarium",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://smorgaberg.github.io/MEMMEM.io/",
   "scripts": {
+    "build": "next build && next export",
+"predeploy": "npm run build",
+"deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
     "dev": "next dev",
     "build": "CI= next build",
     "start": "next start",
