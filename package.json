@@ -8,7 +8,6 @@
 "predeploy": "npm run build",
 "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
     "dev": "next dev",
-    "build": "CI= next build",
     "start": "next start",
     "lint": "next lint",
     "vercel-deploy": "next build && next export"
