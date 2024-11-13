@@ -17,6 +17,41 @@ import { Calendar } from "@/components/ui/calendar"; // Shadcn Calendar componen
 import { Calendar as CalendarIcon } from "lucide-react"; // Icon for Calendar button
 import { Toast } from "@/components/ui/toast"; // Shadcn toast component
 
+
+
+import { useState, useEffect } from 'react';
+import { getDocs, collection } from 'firebase/firestore';
+
+type Memorial = {
+  id: string;
+  [key: string]: any; // 다른 데이터 필드를 포함할 수 있도록 합니다.
+};
+
+const MyComponent = () => {
+  const [memorials, setMemorials] = useState<Memorial[]>([]); // 상태 타입 지정
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMemorials = async () => {
+      const querySnapshot = await getDocs(collection(db, "memorials"));
+      const memorialArray = querySnapshot.docs.map((doc) => ({
+        id: doc.id, // key로 사용할 고유 ID
+        ...doc.data(),
+      }));
+      setMemorials(memorialArray); // 여기에서 대괄호 제거
+      setLoading(false);
+    };
+
+    fetchMemorials();
+  }, []);
+
+  return (
+    <div>
+      {/* 로딩 및 memorials 상태에 따라 렌더링 */}
+    </div>
+  );
+};
+
 export default function MemorialPage() {
   const [description, setDescription] = useState(""); // 추모일 설명 입력 상태
   const [date, setDate] = useState<Date | null>(null); // 선택된 날짜 상태
