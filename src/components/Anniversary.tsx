@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar"; // Shadcn Calendar component
 import { Calendar as CalendarIcon } from "lucide-react"; // Icon for Calendar button
-import { toast } from "@/components/ui/toast"; // Shadcn toast component
+import { Toast } from "@/components/ui/toast"; // Shadcn toast component
 
 export default function MemorialPage() {
   const [description, setDescription] = useState(""); // 추모일 설명 입력 상태
@@ -41,7 +41,7 @@ export default function MemorialPage() {
   // 추모일 추가 함수
   const handleAddMemorial = async () => {
     if (!description || !date) {
-      toast({
+      Toast({
         title: "추모일 추가 실패",
         description: "설명과 날짜를 입력해 주세요.",
         variant: "destructive",
@@ -64,13 +64,13 @@ export default function MemorialPage() {
       setDate(null);
 
       // 성공 피드백
-      toast({
+      Toast({
         title: "추모일 추가 성공",
         description: "추모일이 성공적으로 추가되었습니다.",
       });
     } catch (error) {
       // 실패 피드백
-      toast({
+      Toast({
         title: "추모일 추가 실패",
         description: "추모일 추가 중 오류가 발생했습니다.",
         variant: "destructive",
