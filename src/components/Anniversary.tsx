@@ -31,7 +31,7 @@ export default function MemorialPage() {
         id: doc.id, // key로 사용할 고유 ID
         ...doc.data(),
       }));
-      setMemorials(memorialArray);
+      setMemorials[memorialArray];
       setLoading(false);
     };
 
