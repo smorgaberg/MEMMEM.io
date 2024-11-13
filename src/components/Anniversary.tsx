@@ -27,7 +27,8 @@ const MyComponent = () => {
         id: doc.id, // key로 사용할 고유 ID
         ...doc.data(),
       }));
-      setMemorials(memorialArray); // 여기에서 대괄호 제거
+     const [memorials, setMemorials] = useState<{ id: string }[]>([]);
+
       setLoading(false);
     };
 
