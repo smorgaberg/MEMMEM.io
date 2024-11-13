@@ -24,17 +24,16 @@ export default function MemorialPage() {
   const [loading, setLoading] = useState(true); // 로딩 상태 관리
 
   // Firestore에서 추모일 데이터 가져오기
-  useEffect(() => {
+ useEffect(() => {
     const fetchMemorials = async () => {
       const querySnapshot = await getDocs(collection(db, "memorials"));
       const memorialArray = querySnapshot.docs.map((doc) => ({
         id: doc.id, // key로 사용할 고유 ID
         ...doc.data(),
       }));
-      setMemorials[memorialArray];
+      setMemorials(memorialArray); // 여기에서 대괄호 제거
       setLoading(false);
     };
-
     fetchMemorials();
   }, []);
 
